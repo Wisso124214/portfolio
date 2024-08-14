@@ -1,0 +1,34 @@
+.header-body{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2%; 
+    margin: 0;
+    background-color:#d80000;
+    /*border-bottom: 1px solid #ccc;*/
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    height: 60px;
+}
+
+.title-header{
+    /* font-size: 24px; */
+    font-weight: 700;
+    color: #fff;
+    margin: 15px;
+}
+
+.logo{
+    margin: 0.3%;
+    padding: 0;
+    margin-left: 3%;
+    width: max(10.5%, 150px);
+    height: 85%;
+}
+
+.header-body img{
+    cursor: pointer;
+}

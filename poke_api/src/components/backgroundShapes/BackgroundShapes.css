@@ -1,0 +1,222 @@
+.trngl-up-dmnd-cont{
+  height: 42.81vh;
+  width: 37.9vw;
+  position: absolute;
+  left: 28.65vw;
+  top: 60px;
+  top: 80px;
+}
+
+.trngl-up-dmnd {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, #ffffff, #77777777);
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+.trngl-dwn-dmnd-cont{
+  height: 42.81vh;
+  width: 37.9vw;
+  position: absolute;
+  left: 28.65vw;
+  top: 52.5vh;
+  top: 55.5vh;
+}
+
+.trngl-dwn-dmnd {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(0deg, #00000000, #77777777);
+  clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
+}
+
+.trngl-style-cont{
+  height: 66.03vh;
+  width: 43.366vw;
+  position: absolute;
+  left: 25.7vw;
+  top: 34vh;
+}
+
+.trngl-style{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(0deg, #000000, #7f7f7f);
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+  
+.trngl-tw-cont{
+  height: 46.76vh;
+  width: 41.4vw;
+  position: absolute;
+  left: 27vw;
+  top: 60px;
+}
+
+.trngl-tw{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, #fff, #7f7f7f);
+  clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
+}
+
+.rectLeft {
+  position: absolute;
+  width: 35vw;
+  height: 8.3vh;
+  left: 0;
+  top: 48.55vh;
+  top: 51.55vh;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.rectRight {
+  position: absolute;
+  width: 40vw;
+  height: 8.3vh; 
+  right: 0;
+  top: 48.55vh;
+  top: 51.55vh;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.arrow-left{
+  position: absolute;
+  top: 2vh;
+  left: 2vw;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+
+.arrow-left path{
+  transform: scale(6,3)
+}
+
+.arrow-right{
+  position: absolute;
+  top: 2vh;
+  right: 2vw;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+
+.arrow-right path{
+  transform: scale(6,3)
+}
+
+.arrow-left:hover, .arrow-right:hover{
+  opacity: 0.5;
+}
+
+.text-arrws{
+  position: relative;
+  font-size: 24px;
+  font-family: monospace;
+  text-transform: capitalize;
+  top: 1.25vh;
+}
+
+.text-arrws:hover{
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.text-next-poke{
+  text-align: right;
+  right: 7vw;
+}
+
+.text-prev-poke{
+  text-align: left;
+  left: 7vw;
+}
+
+@media (max-width: 1000px) {
+  .text-prev-poke, .text-next-poke{
+    display: none;
+  } 
+}
+
+.text-specs1{
+  position: absolute;
+  font-size: 20px;
+  font-style: italic;
+  width: 20vw;
+  color: white;
+}
+
+.text-char{
+  top: 40.45vh;
+  top: 43.45vh;
+  left: 8.5vw;
+  text-align: right;
+}
+
+.text-stats{
+  top: 59.7vh;
+  top: 62.7vh;
+  left: 8.5vw;
+  text-align: right;
+}
+
+.text-evols{
+  top: 59.7vh;
+  top: 62.7vh;
+  left: 66.64vw;
+  text-align: left;
+}
+
+.text-ver{
+  top: 40.45vh;
+  top: 43.45vh;
+  left: 66.64vw;
+  text-align: left;
+}
+
+.text-specs2, .text-specs3{
+  position: absolute;
+  font-size: 20px;
+  font-style: italic;
+  font-weight: bold;
+
+  width: 8vw;
+  text-align: center;
+  color: black;
+  display: block;
+}
+
+@media screen and (max-width: 900px) {
+  .text-specs2, .text-specs3{
+    display: none;
+  } 
+}
+
+@media screen and (max-width: 800px) {
+  .text-specs1{
+    display: none;
+  } 
+}
+
+.text-style{
+  left: 43.75vw;
+  top: 75vh;
+  color: white
+}
+
+.text-weak{
+  left: 53vw;
+  top: 11.8vh;
+}
+
+.text-type{
+  left: 34vw;
+  top: 11.8vh;
+}

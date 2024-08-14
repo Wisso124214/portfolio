@@ -1,0 +1,43 @@
+.container-types{
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  top: 19vh;
+  left: 35vw;
+  width: 100px;
+  height: min-content;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 900px) {
+  .container-types{
+    width: 10vw;
+    flex-direction: column;
+    align-items: center;
+    top: 12vh;
+    left: 33vw;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .container-types{
+    display: none;
+  }
+}
+
+.type{
+  margin-right: .5vw;
+}
+
+.type svg{
+  width: max(2.5vw, 25px);
+  height: max(2.5vw, 25px);
+  margin: 5px;
+  object-fit: contain;
+}
+
+.type path{
+  fill: black;
+}

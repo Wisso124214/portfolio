@@ -1,0 +1,81 @@
+.customCard {
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    background-color: #fff;
+    width: 200px;
+    height: 200px;
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    padding: 5px;
+}
+
+.customCard:hover{
+    box-shadow: 2px 2px 5px 2px #ccc;
+    /* animation: bounce-in 5s ease alternate; */
+    transform: scale(.9);
+    cursor: pointer;
+}
+
+@keyframes bounce-in {
+    50% { transform: scale(.9); }
+}
+
+.customCard-content {
+    background-color: #fff;
+    border-radius: 15px;
+    max-width: 90%;
+    max-height: 90%;
+}
+
+.customCard-id {
+    width: min-content;
+}
+
+.customCard-id p {
+    position: relative;
+    margin: 0;
+    color: white;
+    background-color: #242424;
+    font-weight: 900;
+    font-size: 12px;
+    padding: 3px 9px;
+    border-radius: 10px;
+}
+
+
+.customCard-name .name h4 {
+    margin: 0;
+    color: black;
+    font-size: 16px;
+    backdrop-filter: blur(2px);
+    border-radius: 15px;
+    margin-top: -30px;
+    height: min-content;
+    padding: 5px;
+}
+
+.customCard-name{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: end;
+}
+
+.customCard-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
+    margin-top: -15px;
+  }
+  
+  .customCard-image {
+    max-width: 100%; 
+    max-height: 400px;
+    height: 200px;
+    width: 200px;
+    margin-top: -25px;
+  }

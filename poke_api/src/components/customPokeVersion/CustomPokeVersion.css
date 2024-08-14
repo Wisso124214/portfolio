@@ -1,0 +1,170 @@
+.tooltip{
+  position: relative;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  line-height: 1.4;
+  font-weight: 600;
+  width: max-content;
+}
+
+.svg-version{
+  width: 30px;
+  height: 30px;
+  margin: 0 auto;
+}
+
+.version{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.version svg{
+  cursor: pointer;
+}
+
+.red svg, .red path{
+  background-color: rgb(200, 0, 0);
+}
+
+.x svg, .x path{
+  background-color: rgb(0, 0, 0);
+  fill: white;
+}
+
+.y svg, .y path{
+  background-color: rgb(255, 255, 255);
+}
+
+.blue svg, .blue path{
+  background-color: rgb(0, 0, 200);
+}
+
+.sun svg, .sun path{
+  background-color: rgb(253, 184, 19);
+}
+
+.moon svg, .moon path{
+  background-color: #F6F1D5;
+}
+
+.ultra-moon svg, .ultra-moon path{
+  background-color: #91a3b0;
+}
+
+.ultra-sun svg, .ultra-sun path{
+  background-color: #ff8100;
+}
+
+.yellow svg, .yellow path{
+  background-color: rgb(200,200,0);
+}
+
+.gold svg, .gold path{
+  background-color: rgb(201, 171, 0);
+}
+
+.silver svg, .silver path{
+  background-color: rgb(139, 139, 139);
+}
+
+.crystal svg, .crystal path{
+  background-color: #a7d8de;
+}
+
+.ruby svg, .ruby path{
+  background-color: #e0115f;
+}
+
+.sapphire svg, .sapphire path{
+  background-color: #0F52BA;
+}
+
+.emerald svg, .emerald path{
+  background-color: #50C878;
+}
+
+.firered svg, .firered path{
+  background-color: #A9423F;
+}
+
+.leafgreen svg, .leafgreen path{
+  background-color: #c1d11f;
+}
+
+.diamond svg, .diamond path{
+  background-color: #b9f2ff;
+}
+
+.pearl svg, .pearl path{
+  background-color: #E2DFD2;
+}
+
+.platinum svg, .platinum path{
+  background-color: #e5e4e2;
+}
+
+.heartgold svg, .heartgold path{
+  background-color: #808000;
+}
+
+.soulsilver svg, .soulsilver path{
+  background-color: rgb(22,22,64);
+  fill: white;
+}
+
+.black svg, .black path{
+  fill:white;
+  background-color: black;
+}
+
+.white svg, .white path{
+  background-color: white;
+}
+
+.white-2 svg, .white-2 path{
+  background-color: rgb(230, 230, 230);
+}
+
+.black-2 svg, .black-2 path{
+  background-color: rgb(20,20,20);
+  fill:white;
+}
+
+.omega-ruby svg, .omega-ruby path{
+  background-color: #C50124;
+}
+
+.alpha-sapphire svg, .alpha-sapphire path{
+  background-color: #0000a0;
+}
+
+.lets-go-pikachu svg, .lets-go-pikachu path{
+  background-color: #f4dc26;
+}
+
+.sword svg, .sword path{
+  background-color: #7b8085;
+}
+
+.shield svg, .shield path{
+  background-color: #991b1e;
+}
+
+.lets-go-eevee svg, .lets-go-eevee path{
+  background-color: #201303;
+  fill:white;
+}
+
+.scarlet svg, .scarlet path{
+  background-color: #FF2400;
+}
+
+.violet svg, .violet path{
+  background-color: #7F00FF;
+}

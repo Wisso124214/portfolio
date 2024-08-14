@@ -1,0 +1,41 @@
+.carousel {
+  position: absolute;
+  height: 38vh;
+  top: 35vh;
+  width: max-content;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  left: 31.5vw;
+  width: 32vw;
+  user-select: none;
+  transition: all 0.1s;
+/*border: 1px solid #f0f0f0;*/
+}
+
+.arr-icons {
+  width: min-content;
+  height: min-content;
+  position: relative;
+  cursor: pointer;
+  top: 2.25vh;
+}
+
+.carousel-image {
+  width: max(100%, 250px);
+  height: 100%;
+  object-fit: contain;
+  margin: 0 auto;
+}
+
+.arr-icons path{
+  stroke: transparent;
+}
+
+.arr-icons:hover path{
+  opacity: 0.5;
+}
+
+.arr-left{
+  rotate: 180deg;
+}

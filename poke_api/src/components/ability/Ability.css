@@ -1,0 +1,29 @@
+.ab{
+  text-transform: capitalize;
+  width: max-content;
+}
+
+.container-ab{
+  display: flex;
+  flex-direction: column;
+}
+
+.cont-ab, .cont-abh{
+  display: flex;
+  flex-direction: row;
+  width: max-content;
+}
+
+@media screen and (max-width: 800px) {
+  .cont-ab{
+    flex-direction: column;
+  }
+  .cont-ab, .cont-abh{
+    line-height: 1.5;
+  }
+
+}
+
+.hidden{
+  opacity: 70%;
+}

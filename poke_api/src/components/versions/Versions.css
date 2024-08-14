@@ -1,0 +1,75 @@
+.container-versions {
+    display: none;
+}
+
+@media screen and (min-width: 900px) {
+  .container-versions{
+    position: absolute;
+    top: 12.8vh;
+    right: 5vw;
+    display: block;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 0;
+    margin: 0;
+    width: max-content;
+    height: max-content;
+
+  }
+}
+
+.container-versions > *{
+  padding: 5px;
+  margin: 0;
+}
+
+.bars-v{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+  width: min-content;
+  left: -2.5vw;
+  left: 25vw;
+  top: -8vh;
+}
+
+.bar-v-an, .bar-v{
+  position: relative;
+  top: 0;
+  background-color: #808080;
+  width: 1.5vw;
+  border-radius: 5px;
+  margin: 0;
+  height: 0;
+  padding: 0;
+}
+
+.bar-v-an{
+  transition: all 0.4s;
+}
+
+.container-versions:hover .bar-v{
+  display: block;
+  transition: all 0.4s;
+  animation: fade-in 0.25s linear forwards;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.bar-v.fade-out {
+  animation: fade-out 0.25s linear forwards;
+}
+
+@keyframes fade-out {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+.bar-v.active{
+  background-color: white;
+}

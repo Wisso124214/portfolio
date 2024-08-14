@@ -1,0 +1,56 @@
+.stats-content{
+  position: absolute;
+  top: 63vh;
+  left: 0;
+  background-color: transparent;
+}
+
+.stats{
+  display: flex;
+  flex-direction: column;
+}
+
+.stat{
+  font-size: 20px;
+  margin-bottom: 1.2vh;
+  height: 3.95vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.name{
+  color: #eee;
+  font-size: 18px;
+  width: max-content;
+  margin-right: 1vw;
+  margin-left: auto;
+}
+
+.bars-s{
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  top: 0;
+  background-color: transparent;
+  padding: .5vh;
+  border-radius: 5px;
+  padding-left: .5vw;
+}
+
+.bar-s {
+  background-color: #777;
+  /*border: solid .15vh white;*/
+  border-radius: 3px;
+  overflow: hidden;
+  position: relative;
+  height: 3.16vh;
+  width: .45vw;
+  margin-right: .15vw;
+}
+
+.bar-s.fill{
+  opacity: 1;
+  background-color: white;
+}
+
