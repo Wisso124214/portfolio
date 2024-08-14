@@ -1,0 +1,30 @@
+{
+    "compilerOptions": {
+      // ...
+      "baseUrl": ".",
+      "paths": {
+        "@sub/*": [
+          "./src/subsystem/*"
+        ],
+        "@/*": [
+          "./src/*"
+        ],
+        "@comp/*": [
+          "./src/subsystem/components/*"
+        ]
+      }
+      // ...
+    }
+  }
+/*
+  {
+    "compilerOptions": {
+        "target": "es6", // Especifica la versión de ECMAScript objetivo.
+        "module": "commonjs", // Especifica el sistema de módulos.
+        "allowSyntheticDefaultImports": true, // Permite importaciones predeterminadas sintéticas para módulos ES6.
+        "baseUrl": ".",
+        "paths": {
+          "@/*": ["./src/*"]
+        }
+    },
+}*/

@@ -1,0 +1,194 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components{
+
+  .inputform-container {
+    overflow: hidden;
+    width: 215px; /* Igual al ancho del .inputform */
+    padding-bottom: 5px; /* Ajusta según el tamaño de la sombra */
+  }
+
+  .inputform{
+    @apply bg-transparent mt-2 mb-0 border-white border-opacity-50 border-b text-center text-white  hover:border-opacity-80 placeholder:text-opacity-60 placeholder:text-white focus:outline-none focus:border-opacity-100;
+    width: 215px;
+    font-size: 15px;
+    padding: 13px 0;
+    margin: 0;
+    box-shadow: 0 2px 4px rgba(255,255,255, .6);
+  }
+
+  .inputform:hover{
+    box-shadow: 0 2px 4px rgba(255,255,255, .8);
+  }
+
+  .inputform:focus{
+    box-shadow: 0 2px 4px rgba(255,255,255, 1);
+  }
+
+  .form{
+    @apply flex flex-col rounded-2xl place-items-center;
+    min-width: 290px;
+    height: min-content;
+    /*margin: -40% 0 0 40%;*/
+    transition: all .25s ease;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: #156766cc;
+    z-index: 0;
+    padding-top: 35px;
+  }
+
+  .form::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: 5px;
+    bottom: 5px;
+    width: calc(100% + 10px);
+    height: calc(100% + 10px);
+    backdrop-filter: blur(2px); /* Ajusta el valor del desenfoque según sea necesario */
+    z-index: -1; /* Asegúrate de que el pseudo-elemento esté detrás del contenido */
+}
+
+  .fingerprint{
+    height: 60px;
+    margin-bottom: 10px;
+  }
+
+  .fingerprint img{
+    height: inherit;
+  }
+
+  .button{
+    @apply text-dgreen text-lg;
+    padding: 8px;
+    width: 160px;
+    margin: 40px 0 30px 0;
+    background-color: white;
+    border-radius: 30px;
+    font-family: 'Inter',Verdana;
+    font-weight: 500;
+  }
+
+  .button:hover{
+    background-color: rgba(255, 255, 255, .75);
+  }
+
+  .labelform{
+    @apply text-white;
+    font-size: 14px;
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .labelform .linklabel{
+    @apply border-white border-b;
+    width: fit-content;
+    margin-left: 8px;
+  }
+
+  .linklabel:hover, .linklabel:focus {
+    font-weight: 600;
+    border-bottom: 2px solid white;
+    margin-bottom: -1px;
+    outline: none;
+  }
+
+  .buttonback, .buttonback.fngrprnt-hidden{
+    position: absolute;
+    top: 45px;
+    left: 40px;
+    padding: 3px;
+    width: min-content;
+    height: min-content;
+  }
+
+  .buttonback.fngrprnt-hidden{
+    top: 20px;
+    left: 35px;
+  }
+
+  .buttonback:hover{
+    @apply  opacity-50 
+  }
+
+  .buttonback:focus{
+    border-radius: 100%;
+    outline: thin dashed #fff;
+  }
+
+  /*dropdown*/
+
+  .dropdownform{
+    text-align: center;
+    color: black;
+    font-size: 15px;
+    margin: 10px;
+    user-select: none;
+  }
+
+  .fielddropdown{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: calc(100% + 2px);
+    justify-content: space-between;
+    padding: 5px 7px 5px 4px;
+    border: 1px solid rgba(255,255,255, .6);
+    box-shadow: 0 0 3px 1px rgba(255,255,255, .6);
+    color: white;
+  }
+
+  .fielddropdown:hover{
+    border: 1px solid rgba(255,255,255, .8);
+    box-shadow: 0 0 3px 1px rgba(255,255,255, .8);
+  }
+
+  .fielddropdown svg{
+    fill: rgba(255,255,255, .6);
+    transition: all .5s ease;
+  }
+
+  
+  .fielddropdown path{
+    fill: rgba(255,255,255, .6);
+  }
+  
+  .fielddropdown:hover path{
+    fill: rgba(255,255,255, .75);
+  }
+
+  .fielddropdown.open{
+    border: 1px solid rgba(255,255,255, 1);
+    box-shadow: 0 0 3px 1px rgba(255,255,255, 1);
+  }
+
+  .fielddropdown.open svg{
+    transform:  rotate(180deg);
+  }
+  
+  .fielddropdown.open path{
+    fill: rgba(255,255,255, 1);
+  }
+  
+  .selectdropdown{
+    display: none;
+    position: absolute;
+    background-color: rgba(255,255,255, .9);
+  }
+
+  .optiondropdown{
+    padding: 2px 0;
+    margin: 2px;
+    overflow: hidden;
+  }
+
+  .optiondropdown:hover{
+    background-color: rgba(0,0,0, .1);
+  }
+}

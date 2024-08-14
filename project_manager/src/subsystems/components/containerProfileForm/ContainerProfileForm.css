@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components{
+
+  .divform{
+    @apply flex text-sm m-4;
+  }
+
+  .divall{
+    @apply font-comicsans;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .bg-img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    max-width: 1000%;
+  }
+}
