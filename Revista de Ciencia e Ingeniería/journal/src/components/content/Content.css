@@ -1,12 +1,13 @@
-.content{
+#content-scroll{
   position: absolute;
   top: 16vh;
   left: 0;
   background-color: #f5f5f5;
   height: 76vh;
-  margin: max(2vw,20px);
+  margin: max(2vw, 20px);
   border-radius: max(1vw,10px);
   padding: 2vw;
+  padding-right: max(2vw, 25px);
   border: 1px solid #ccc;
   text-align: left;
 }
@@ -21,12 +22,28 @@
   color: #333;
 }
 
-.cont-item-data{
+.cont-item-date{
   @apply text-sm w-max mr-2 px-2;
-  background-color: #e2e2e2;
+  background-color: #ddd;
   font-weight: 600;
   font-family: monospace
 }
+
+.cont-item-categories{
+  @apply text-sm w-max mr-2 px-2;
+  background-color: #93D5F0;
+  font-weight: 600;
+  font-family: monospace;
+}
+
+.cont-item-tags{
+  @apply text-sm w-max mr-2 px-2;
+  background-color: #333333;
+  font-weight: 600;
+  font-family: monospace;
+  color: #93D5F0;
+}
+
 
 .separator{
   @apply w-full mt-6 mb-2;

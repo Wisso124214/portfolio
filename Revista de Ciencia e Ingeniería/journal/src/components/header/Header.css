@@ -28,8 +28,8 @@
 }
 
 .logo img{
-  height: 70%;
-  width: 70%;
+  height: max(70%, 60px);
+  width: max(70%, 60px);
   object-fit: contain;
   margin-left: 20%;
 }
@@ -39,10 +39,24 @@
   cursor: pointer;
 }
 
+#header-content-scroll{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 90vw;
+  margin: min(2vw, 15px) 0;
+}
+
 .search, .search-input{
   @apply flex flex-row items-center;
   margin-right: 1%;
   height: 100%;
+}
+
+@media screen and (max-width: 250px){
+  .logo{
+    display: none;
+  }
 }
 
 @media screen and (max-width: 500px){
@@ -51,8 +65,27 @@
   }
 }
 
+@media screen and (max-width: 600px){
+  .logo h1{
+    display: none;
+  }
+}
+
+@media screen and (max-width: 850px){
+  #header-content-scroll{
+    width: 85vw;
+    margin: 2vw 0;
+  }
+}
+
 @media screen and (max-width: 1100px){
-  .menu{
+  #navigation{
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1100px){
+  .categories-mobile{
     display: none;
   }
 }

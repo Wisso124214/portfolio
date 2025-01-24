@@ -1,114 +1,94 @@
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@/components/ui/tooltip"
 import { ScrollArea } from "@/components/ui/scroll-area"
 import './Content.css';
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button"
+import Result from "./result/Result";
 
-const Content = ({ data, searchText, propSelected, setPropSelected, setSearchText }) => {
+const Content = ({ props }) => {
 
-  const allData = data.map((item, index) => {
-    return (
-      <div key={index} className="content-item">
-        <TooltipProvider >
-          <Tooltip >
-            <TooltipTrigger className='text-left hover:underline'>
-              <h2>{item.title}</h2>
-            </TooltipTrigger>
-            <TooltipContent>
-              <p>{item.url}</p>
-            </TooltipContent>
-          </Tooltip>
-        </TooltipProvider>
-        
-        <p>{item.date + ' -- ' + item.description}</p>
-      </div>
-    )
-  })
-  
+  const { data, searchText, categorySelected, setTagSelected, setCategorySelected, setSearchText, setFilterBy, setTitleCategorySelected, titleCategorySelected, categories, filterBy, tagSelected } = props;
+
   const errMessage = {
     propSelected: 'Lo sentimos. No se encontraron resultados para filtrar por "',
     searchText: 'Lo sentimos. No se encontraron resultados coincidencias para "'
   }
 
-  const [filterData, setFilterData] = useState(allData);
+  const [width, setWidth] = useState(globalThis.visualViewport.width)
 
+  useEffect(()=>{
+    setInterval(()=>{
+      setWidth(globalThis.visualViewport.width)
+    },500)
+  },[])
+
+  useEffect(() => {
+    setFilterData(updateAllData(data));
+  }, [data])
+
+
+  const updateAllData = (data) => {
+    return data.map((item, index) => {
+      const propsResult = {item, index, categories, setFilterBy, setTitleCategorySelected, setCategorySelected, setSearchText, setTagSelected, filterBy }
+      return (
+        <Result props={propsResult} key={index} />
+      )
+    })
+  }
+
+  const [filterData, setFilterData] = useState(updateAllData(data));
+  
   //on useEffect filter data by search text and print quantity of results
   useEffect(() => {
-    let filterData;
-    if(propSelected!==''){
-      filterData = data.filter(item => item.author===propSelected).map((item, index) => {
+    let newFilterData;
+    if(categorySelected !== '' && filterBy === 'categorySelected') {
+
+      newFilterData = data.filter(item => item[titleCategorySelected]===categorySelected).map((item, index) => {
+        const propsResult = {item, index, categories, setFilterBy, setTitleCategorySelected, setCategorySelected, setSearchText, setTagSelected, filterBy }
         return (
-          <div key={index} className="content-item">
-            <TooltipProvider >
-              <Tooltip >
-                <TooltipTrigger className='text-left hover:underline'>
-                  <h2>{item.title.split(' ').map(w=>
-                    w.toLowerCase().includes(searchText.toLowerCase()) && searchText.length > 1 ? '«'+w+'»' : w
-                    ).join(' ')}</h2>
-                </TooltipTrigger>
-                <TooltipContent>
-                  <p>{item.url}</p>
-                </TooltipContent>
-              </Tooltip>
-            </TooltipProvider>
-            
-            <div className="flex flex-col">
-              <div className="flex flex-row m-2 ml-4">
-                {item.date ? <p className="cont-item-data" >{item.date}</p> : null}
-                {item.author ? <p className="cont-item-data" >{item.author}</p> : null}
-              </div>
-              <p className="text-lg mt-1" >&emsp;{item.description}</p>
-              <div className="separator"></div>
-            </div>
-          </div>
+          <Result props={propsResult} key={index} />
         )});
-      setFilterData(filterData);
+      setFilterData(newFilterData);
     }
-    else if (searchText || searchText === '') {
-      filterData = data.filter(item => searchText!=='' ? item.title.toLowerCase().includes(searchText.toLowerCase()): true).map((item, index) => {
+    else if (tagSelected !== '' && filterBy === 'tagSelected') {
+
+      newFilterData = data.filter(item => item.tags.includes(tagSelected)).map((item, index) => {
+        const propsResult = {item, index, categories, setFilterBy, setTitleCategorySelected, setCategorySelected, setSearchText, setTagSelected, filterBy }
         return (
-          <div key={index} className="content-item">
-            <TooltipProvider >
-              <Tooltip >
-                <TooltipTrigger className='text-left hover:underline'>
-                  <h2>{item.title.split(' ').map(w=>
-                    w.toLowerCase().includes(searchText.toLowerCase()) && searchText.length > 1 ? '«'+w+'»' : w
-                    ).join(' ')}</h2>
-                </TooltipTrigger>
-                <TooltipContent>
-                  <p>{item.url}</p>
-                </TooltipContent>
-              </Tooltip>
-            </TooltipProvider>
-            
-            <div className="flex flex-col">
-              <div className="flex flex-row m-2 ml-4">
-                {item.date ? <p className="cont-item-data" >{item.date}</p> : null}
-                {item.author ? <p className="cont-item-data" >{item.author}</p> : null}
-              </div>
-              <p className="text-lg mt-1" >&emsp;{item.description}</p>
-              <div className="separator"></div>
-            </div>
-          </div>
+          <Result props={propsResult} key={index} />
         )});
-        setFilterData(filterData);
-      }
-  }, [searchText, propSelected]);
+        setFilterData(newFilterData);
+    } else if (searchText || searchText === '') {
+
+      newFilterData = data.filter(item => searchText !== '' && filterBy === 'searchText' ? item.title.toLowerCase().includes(searchText.toLowerCase()): true).map((item, index) => {
+        const propsResult = {item, index, categories, setFilterBy, setTitleCategorySelected, setCategorySelected, setSearchText, setTagSelected, filterBy }
+        return (
+          <Result props={propsResult} key={index} />
+        )});
+        setFilterData(newFilterData);
+    }
+    
+  }, [searchText, categorySelected, tagSelected, filterBy]);
 
   return (
-    <ScrollArea className="content">
+    <ScrollArea id='content-scroll'>
       {
-        <div className="flex flex-row w-full justify-between ">{
+        <div id='header-content-scroll' >{
             filterData.length > 0 ? 
             (filterData.length < data.length ? <p className="ml-8 mt-2">Se encontraron {filterData.length} resultados</p>  : null) : 
-            <p className="ml-8 mt-2"> {searchText === '' ? errMessage.propSelected+propSelected : errMessage.searchText+searchText}". </p> 
+            <p className="ml-8 mt-2"> {searchText === '' ? errMessage.propSelected+categorySelected : errMessage.searchText+searchText}". </p> 
           }
-          {filterData.length < data.length ? <Button variant="outline" onClick={()=>{setPropSelected(''); setSearchText(''); document.getElementById('searcher').value = ''}}>Mostrar todos los resultados</Button> : null}
+          {filterData.length < data.length ? 
+            <Button 
+              variant="outline" 
+              className='px-4' 
+              onClick={() => {
+                setCategorySelected(''); 
+                setSearchText(''); 
+                document.getElementById('searcher').value = '';
+                setTagSelected('');
+                setFilterBy('');
+              }}
+            >{width > 600 ? 'Mostrar todos los resultados' : 'Todos'}</Button> : null }
         </div>
       }
       {
