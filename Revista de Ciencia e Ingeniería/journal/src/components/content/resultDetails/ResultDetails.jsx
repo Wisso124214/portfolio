@@ -7,7 +7,7 @@ const ResultDetails = ({ props }) => {
   return (
     <div className="flex flex-col">
       <div className="flex flex-row m-3 ml-4 mb-4">
-        {item.date ? <p className="cont-item-date" >{item.date}</p> : null}
+        {item.date ? <p className="cont-item-date" style={{ color: '#fff', backgroundColor: '#444' }} >{item.date}</p> : null}
         
         { Object.keys(categories).map((prop, index) => {
           return item[prop] ? 

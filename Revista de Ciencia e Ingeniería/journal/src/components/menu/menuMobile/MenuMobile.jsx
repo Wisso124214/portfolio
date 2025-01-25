@@ -24,20 +24,20 @@ const MenuMobile = ({ props }) => {
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent className="text-center" key="type-prop" >
-          <DropdownMenuLabel className="capitalize pl-5 text-left" >Categorías</DropdownMenuLabel>
+          <DropdownMenuLabel className="capitalize pl-5 text-left" style={{ color: '#333', backgroundColor: '#93D5F0' }} >Categorías</DropdownMenuLabel>
           { Object.keys(categories).map((option, index) => 
-            <DropdownMenuSub key={option+index}>
-              <DropdownMenuSubTrigger key={option+index} className="capitalize pl-8" > {option} &emsp; </DropdownMenuSubTrigger> 
-              <DropdownMenuSubContent key={option+index}>
+            <DropdownMenuSub key={option+'-sub'}>
+              <DropdownMenuSubTrigger key={option+'-trigger'} className="capitalize pl-8" > {option} &emsp; </DropdownMenuSubTrigger> 
+              <DropdownMenuSubContent key={option+'-content'} >
                 { categories[option] && categories[option].map((suboption, index) => 
-                  <DropdownMenuItem key={suboption+index} className="capitalize px-12 flex flex-col self-center" onClick={()=>{setCategorySelected(suboption); setTitleCategorySelected(option)}} >{suboption}</DropdownMenuItem> 
+                  <DropdownMenuItem key={suboption} className="capitalize px-12 flex flex-col self-center" onClick={()=>{setCategorySelected(suboption); setTitleCategorySelected(option)}} >{suboption}</DropdownMenuItem> 
                 ) }
               </DropdownMenuSubContent>
             </DropdownMenuSub>
           )}
 
           <DropdownMenuSeparator />
-          <DropdownMenuLabel className="capitalize pl-5 text-left" >Etiquetas</DropdownMenuLabel>
+          <DropdownMenuLabel className="capitalize pl-5 text-left" style={{ color: '#fff', backgroundColor: '#115F8B' }} >Etiquetas</DropdownMenuLabel>
             { tags.map((option, index) => 
               <DropdownMenuItem key={option+index} className="capitalize pl-8" onClick={()=>{ setTagSelected(option); setFilterBy('tagSelected') }} >{option} &emsp; &nbsp; </DropdownMenuItem> 
             )} 

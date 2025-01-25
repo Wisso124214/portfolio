@@ -38,10 +38,10 @@
 
 .cont-item-tags{
   @apply text-sm w-max mr-2 px-2;
-  background-color: #333333;
+  background-color: #115F8B;
   font-weight: 600;
   font-family: monospace;
-  color: #93D5F0;
+  color: #fff;
 }
 
 

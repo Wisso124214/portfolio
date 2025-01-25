@@ -14,6 +14,7 @@ const Content = ({ props }) => {
   }
 
   const [width, setWidth] = useState(globalThis.visualViewport.width)
+  const [hoverStyle, setHoverStyle] = useState({ color: '#fff', backgroundColor: '#444' });
 
   useEffect(()=>{
     setInterval(()=>{
@@ -81,6 +82,9 @@ const Content = ({ props }) => {
             <Button 
               variant="outline" 
               className='px-4' 
+              style={{ color: hoverStyle.color, backgroundColor: hoverStyle.backgroundColor }}
+              onMouseEnter={() => setHoverStyle({ color: '#444', backgroundColor: '#fff' })}
+              onMouseLeave={() => setHoverStyle({ color: '#fff', backgroundColor: '#444' })}
               onClick={() => {
                 setCategorySelected(''); 
                 setSearchText(''); 
